@@ -1,0 +1,8 @@
+@use '../../global-styles/colors' as c;
+@use '../../global-styles/mixin' as m;
+
+.content {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}

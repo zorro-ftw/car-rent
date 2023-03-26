@@ -1,0 +1,64 @@
+@use '../../../global-styles/colors' as c;
+@use '../../../global-styles/mixin' as m;
+
+.carTable {
+    padding-inline: 28px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    margin-inline: 28px;
+    margin-bottom: 28px;
+    width: calc(100% - 56px);
+    min-width: 612px;
+    height: 100%;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 8px 24px rgba(69, 69, 80, 0.1);
+
+    .carTable__topRow {
+        width: 100%;
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .carTable__title {
+        margin: 0px;
+        @include m.applyFontProps(600, 16px, 24px);
+        color: c.$menuBg;
+    }
+
+    .carTable__filter {
+        @include m.applyFontProps(500, 16px, 24px);
+        color: c.$gray02;
+        height: 100%;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    table {
+        width: 100%;
+        
+
+        th {
+            @include m.applyFontProps(300, 14px, 16px);
+            color: c.$gray02;
+            text-align: start;
+            border-bottom: 1px solid c.$gray06 ;
+            padding-bottom: 12px;
+        }
+
+        
+    }
+
+
+    .carTable__divider {
+        margin-block: 12px;
+        width: 100%;
+        height: 1px;
+        background-color: c.$gray06;
+
+    }
+}

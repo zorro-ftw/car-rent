@@ -1,0 +1,40 @@
+@use '../../global-styles/colors' as c;
+@use '../../global-styles/mixin' as m;
+
+.stats {
+    width: 100%;
+    max-width: 344px;
+    min-height: 100vh;
+    padding-inline: 28px;
+    padding-block: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: c.$statsColumnBg;
+
+    .stats__titleWrapper {
+        width: 100%;
+    }
+
+    .stats__title{
+        @include m.applyFontProps(500, 20px, 30px);
+        margin: 0px;
+        width: 100%;
+        color: c.$gray02;
+    }
+
+    .stats__date {
+        @include m.applyFontProps(400, 14px, 18px);
+        margin: 0px;
+        width: 100%;
+        color: c.$gray03;
+    }
+}
+
+// RESPONSIVENESS
+@media screen and (width <= 768px) {
+    .stats {
+        padding-top: 70px;
+    }   
+}

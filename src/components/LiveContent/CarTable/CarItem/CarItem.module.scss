@@ -1,0 +1,76 @@
+@use '../../../../global-styles/colors' as c;
+@use '../../../../global-styles/mixin' as m;
+
+.carItem {
+    td {
+        padding-block: 12px;
+    }
+
+    .carItem__no{
+        @include m.applyFontProps(400, 12px, 16px);
+        color: c.$menuBg;
+    }
+
+    .carItem__id {
+        @include m.applyFontProps(400, 14px, 16px);
+        color: c.$menuBg;
+        width: fit-content;
+        padding: 4px 12px;
+        background-color: c.$gray07;
+        border-radius: 4px;
+    }
+
+    .carItem__driver {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        @include m.applyFontProps(400, 16px, 19px);
+        color: c.$menuBg;
+    }
+
+    .carItem__status {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @include m.applyFontProps(300, 16px, 19px);
+        color: c.$gray02;
+    }
+
+    .carItem__earning{
+        @include m.applyFontProps(300, 16px, 19px);
+        color: c.$gray02;
+    }
+
+    
+    .carItem__circle{
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border-radius: 8px;
+    }
+
+    button {
+        @include m.applyFontProps(400, 16px, 24px);
+        text-align: center;
+        padding: 4px 16px;
+        color: c.$activeMenuText;
+        background-color: c.$activeNavBg;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+    }
+
+   
+}
+.inRoute {
+    background-color: c.$red;
+}
+
+.pending {
+    background-color: c.$activeNavBg;
+}
+
+.completed {
+    background-color: c.$green;
+}
+

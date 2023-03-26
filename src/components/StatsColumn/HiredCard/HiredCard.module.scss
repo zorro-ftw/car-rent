@@ -1,0 +1,90 @@
+@use '../../../global-styles/colors' as c;
+@use '../../../global-styles/mixin' as m;
+
+.hiredCard {
+    width: 100%;
+    padding: 24px;
+    background-color: #FDFDFD;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0px 8px 24px rgba(69, 69, 80, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+
+    &:hover {
+        box-shadow: 0px 8px 24px rgba(69, 69, 80, 0.3);
+    }
+
+    .hiredCard__heading {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .hiredCard__title {
+        @include m.applyFontProps(500, 18px, 24px);
+        color: c.$gray02;
+    }
+
+    .hiredCard__date {
+        @include m.applyFontProps(400, 12px, 16px);
+        padding: 4px 9px;
+        color: c.$gray02;
+        background-color: c.$gray04;
+        border: none;
+        border-radius: 2px;
+    }
+
+    .hiredCard__row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        @include m.applyFontProps(400, 16px, 24px);
+
+        .hiredCard__category {            
+            width: 136px;
+            margin-right: 20px;
+            color: c.$menuBg;
+        }
+
+        .hiredCard__circle {
+            width: 16px;
+            height: 16px;
+            border-radius: 8px;
+            border: none;
+            margin-right: 12px;
+        }
+    }
+
+    .hiredCard__row:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+.circle1 {
+    background-color: c.$activeNavBg;
+}
+
+.circle2 {
+    background-color: c.$green;
+}
+
+.circle3 {
+    background-color: c.$red;
+}
+
+.good, .bad {
+    height: 25px;
+    font-size: 16px;
+    margin-top: -10px;
+}
+
+.good {
+    color: c.$green;
+    
+}
+
+.bad {
+    color: c.$red;
+}

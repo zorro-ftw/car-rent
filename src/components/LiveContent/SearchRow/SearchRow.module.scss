@@ -1,0 +1,55 @@
+@use '../../../global-styles/colors' as c;
+@use '../../../global-styles/mixin' as m;
+
+.searchRow {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 28px;
+    margin-bottom: 20px;
+    padding-right: 28px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4.673%;
+
+
+    .searchRow__form {
+        height: 100%;
+        width: 100%;
+        max-width: 366px;
+
+        input {
+            @include m.applyFontProps(400, 16px, 24px);
+            padding-block: 12px;
+            padding-left: 32px;
+            width: 100%;
+            border: none;
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0px 2.70309px 27.0309px rgba(69, 69, 80, 0.1);
+            color: c.$gray02;
+        }
+
+
+        input::placeholder {
+            color: c.$gray03;
+        }
+
+        input:focus {
+            outline: 1px solid c.$gray02;
+        }
+
+        .searchRow__container {
+            height: 100%;
+            display: flex;
+
+            .searchRow__icon {
+                position: relative;
+                top: 12px;
+                right: 52px;
+                
+            }
+        }
+        
+    }
+}

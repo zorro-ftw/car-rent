@@ -1,0 +1,13 @@
+
+.main {
+    width: 100%;
+    display: flex;
+
+}
+
+// RESPONSIVENESS
+@media screen and (max-width: 1251px) {
+    .main{
+        flex-wrap: wrap;
+    }
+}

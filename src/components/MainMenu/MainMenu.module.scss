@@ -1,0 +1,112 @@
+@use '../../global-styles/colors' as c;
+@use '../..//global-styles/mixin' as m;
+
+.menu {
+    width: 240px;
+    min-width: 240px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-block: 50px;
+    padding-inline: 24px;
+    background-color: c.$menuBg;
+
+    .menu__drawerBtn{
+        display: none;
+    }
+
+    .menu__top {
+        display: flex;
+        flex-direction: column;
+
+
+        .menu__title{
+            @include m.applyFontProps(700, 26px, 30px);
+            margin-top: 0px;
+            margin-bottom: 44px;
+            color: white;
+        }
+
+        .menu__divider{
+            width: 176px;
+            margin-left: 16px;
+            height: 1px;
+            margin-block: 36px;
+            background-color: c.$logoutBg;
+        }
+
+
+
+        .menu__detailsTitle{
+            margin-left: 16px;
+            margin-top: 0px;
+            @include m.applyFontProps(400, 16px, 24px);
+            color: c.$fadedGray;
+        }
+    }
+
+    .menu__list{
+        margin: 0px;
+        padding-left: 0px;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+    }
+
+
+
+
+
+
+
+    .menu__logout{
+        @include m.applyFontProps(500, 18px, 24px);
+        height: 48px;
+        color: c.$activeMenuText;
+        background-color: c.$logoutBg;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+
+        i{
+            margin-right: 14px;
+        }
+    }
+
+    .menu__logout:hover {
+        background-color: c.$logoutBgHover;
+    }
+}
+
+// RESPONSIVENESS
+@media screen and (max-width: 768px) {
+    
+    .menu {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        transition: all 0.2s ease-out;
+        transform: var(--drawer-state);
+        z-index: 10;
+
+
+        .menu__drawerBtn{
+            position: relative;
+            left: 240px;
+            top: -25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            margin-bottom: -30px;
+            font-size: 25px;   
+            transition: 0.2s all ease-out;
+        }
+    
+    }
+    
+}

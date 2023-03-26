@@ -1,0 +1,49 @@
+@use '../../../global-styles/colors' as c;
+@use '../../../global-styles/mixin' as m;
+
+.menu__item{
+    @include m.applyFontProps(500, 16px, 24px);
+    width: 100%;
+    height: 48px;
+    max-height: 48px;
+    padding-block: 12px;
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: c.$activeMenuText;
+    opacity: 0.75;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease-out;
+
+    &:hover{
+        background-color: c.$menuItemHover;
+    }
+
+
+    .menu__itemInd{
+        height: 36px;
+        width: 6px;
+        margin-left: -16px;
+        border: none;
+        border-radius: 4px;
+        background-color: c.$activeMenuText;
+    }
+
+    .idle{
+        display: none;
+    }
+    
+}
+
+.active {
+    background-color: c.$activeNavBg;
+    opacity: 1;
+}
+
+.active:hover {
+    background-color: c.$activeNavBgHover;
+}
+
+
