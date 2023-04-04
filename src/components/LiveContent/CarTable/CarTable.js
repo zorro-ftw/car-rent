@@ -1,6 +1,7 @@
+import axios from "axios";
+import Image from "next/image";
 import styles from "./CarTable.module.scss";
 import filter from "../../../../public/assets/filter.svg";
-import Image from "next/image";
 import CarItem from "./CarItem/CarItem";
 
 export default async function CartTable() {
@@ -39,9 +40,8 @@ export default async function CartTable() {
 }
 
 async function getCarStatus() {
-  const res = await fetch(
+  const res = await axios.get(
     "https://jazzy-selkie-d6e3b7.netlify.app/api/carStatus"
   );
-  const data = await res.json();
-  return data;
+  return await res.data;
 }

@@ -1,3 +1,4 @@
+import axios from "axios";
 import FinancialCard from "./FinancialCard/FinancialCard";
 import HiredCard from "./HiredCard/HiredCard";
 import styles from "./StatsColumn.module.scss";
@@ -28,9 +29,8 @@ const getCurrentDateFormatted = () => {
 };
 
 async function getFinStats() {
-  const res = await fetch(
+  const res = await axios.get(
     "https://jazzy-selkie-d6e3b7.netlify.app/api/financialStats"
   );
-  const data = await res.json();
-  return data;
+  return await res.data;
 }
