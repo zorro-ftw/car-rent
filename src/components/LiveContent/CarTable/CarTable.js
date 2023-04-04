@@ -39,7 +39,9 @@ export default async function CartTable() {
 }
 
 async function getCarStatus() {
-  const res = await fetch("http://localhost:3000/api/carStatus");
+  const res = await fetch(
+    "https://jazzy-selkie-d6e3b7.netlify.app//api/carStatus"
+  );
   const data = await res.json();
   return data;
 }

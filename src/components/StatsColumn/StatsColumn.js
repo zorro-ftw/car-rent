@@ -28,7 +28,9 @@ const getCurrentDateFormatted = () => {
 };
 
 async function getFinStats() {
-  const res = await fetch("http://localhost:3000/api/financialStats");
+  const res = await fetch(
+    "https://jazzy-selkie-d6e3b7.netlify.app//api/financialStats"
+  );
   const data = await res.json();
   return data;
 }
