@@ -5,9 +5,7 @@ import styles from "./StatsColumn.module.scss";
 
 export default async function StatsColumn() {
   const date = getCurrentDateFormatted();
-  {
-    /*const stats = await getFinStats();*/
-  }
+  const stats = await getFinStats();
 
   return (
     <section className={styles.stats}>
@@ -15,9 +13,9 @@ export default async function StatsColumn() {
         <h3 className={styles.stats__title}>Todays Statistics</h3>
         <p className={styles.stats__date}>{date}</p>
       </div>
-      {/*<FinancialCard mode={"income"} stats={stats} />
+      <FinancialCard mode={"income"} stats={stats} />
       <FinancialCard mode={"expense"} stats={stats} />
-  <HiredCard stats={stats} />*/}
+      <HiredCard stats={stats} />
     </section>
   );
 }
@@ -31,6 +29,8 @@ const getCurrentDateFormatted = () => {
 };
 
 async function getFinStats() {
-  const res = await axios.get("http://localhost:3000/api/financialStats");
+  const res = await axios.get(
+    "https://car-rent-zorro-ftw.vercel.app/api/financialStats"
+  );
   return await res.data;
 }

@@ -5,13 +5,11 @@ import filter from "../../../../public/assets/filter.svg";
 import CarItem from "./CarItem/CarItem";
 
 export default async function CartTable() {
-  {
-    /*const status = await getCarStatus();
+  const status = await getCarStatus();
 
   const renderCars = status.map((car, index) => (
     <CarItem key={car.id} car={car} index={index} />
-  ));*/
-  }
+  ));
 
   return (
     <div className={styles.carTable}>
@@ -35,13 +33,15 @@ export default async function CartTable() {
           </tr>
         </thead>
 
-        <tbody>{/*{renderCars}*/}</tbody>
+        <tbody>{renderCars}</tbody>
       </table>
     </div>
   );
 }
 
 async function getCarStatus() {
-  const res = await axios.get("http://localhost:3000/api/carStatus");
+  const res = await axios.get(
+    "https://car-rent-zorro-ftw.vercel.app/api/carStatus"
+  );
   return res.data;
 }
