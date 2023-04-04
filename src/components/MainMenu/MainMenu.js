@@ -1,20 +1,10 @@
 "use client";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import styles from "./MainMenu.module.scss";
 import MenuItem from "./MenuItem/MenuItem";
 
 export default function MainMenu() {
-  // State to follow currently active tab & page
-  const [activeTab, setActiveTab] = useState("Dashboard");
-
-  // For the sake of responsiveness we define this state to be used in mobile & tablet version.
-  const [isDrawerOpen, setDrawer] = useState(false);
-
-  const drawerStyle = {
-    "--drawer-state": isDrawerOpen ? "translateX(0px)" : "translateX(-240px)",
-  };
-
   // Router for navigation
   const router = useRouter();
 
@@ -27,6 +17,20 @@ export default function MainMenu() {
     "Payment Details": "payment-details",
     Transactions: "transactions",
     "Car Report": "car-report",
+  };
+
+  const pathname = Object.keys(routeDecider).filter(
+    (key) => routeDecider[key] === usePathname().slice(1)
+  );
+
+  // State to follow currently active tab & page
+  const [activeTab, setActiveTab] = useState(pathname[0]);
+
+  // For the sake of responsiveness we define this state to be used in mobile & tablet version.
+  const [isDrawerOpen, setDrawer] = useState(false);
+
+  const drawerStyle = {
+    "--drawer-state": isDrawerOpen ? "translateX(0px)" : "translateX(-240px)",
   };
 
   // Defining the navigation portion of menu items
