@@ -40,8 +40,6 @@ export default async function CartTable() {
 }
 
 async function getCarStatus() {
-  const res = await axios.get(
-    "https://jazzy-selkie-d6e3b7.netlify.app/api/carStatus"
-  );
-  return await res.data;
+  const res = await axios.get("http://localhost:3000/api/carStatus");
+  return res.data;
 }

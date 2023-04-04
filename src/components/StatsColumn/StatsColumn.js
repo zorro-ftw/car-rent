@@ -29,8 +29,6 @@ const getCurrentDateFormatted = () => {
 };
 
 async function getFinStats() {
-  const res = await axios.get(
-    "https://jazzy-selkie-d6e3b7.netlify.app/api/financialStats"
-  );
+  const res = await axios.get("http://localhost:3000/api/financialStats");
   return await res.data;
 }
